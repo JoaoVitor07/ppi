@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <style>
+            body{
+                width: 60%;
+                margin: 0 auto;
+                background-color: #ddd;
+                color: #444;
+                font-family: 'Helvetica Neue';
+                text-align: left;
+                padding: 10px;
+                line-height: 1.5;
+            }
+            main{
+                background-color: white;
+                border-radius: 10px;
+                padding: 20px;
+            }
+            h1, h2{
+                color:rgb(140, 76, 8);
+            }
+            h2{
+                margin-top: 10px;
+                user-select: none;
+            }
+            section{
+                border-top:1px solid grey;
+            }
+        </style>
+        <meta charset="UTF-8">
+        <title>Currículo de João Vítor da Silva</title>
+    </head>
+
+    <body>
+        <main>
+            <script>
+                window.onload = function(){
+                    const subtitulos = document.querySelectorAll("h2");
+                    for(let subtitulo of subtitulos){
+                        subtitulo.onclick = () => subtitulo.nextElementSibling.style.display = 'none';
+                        subtitulo.addEventListener("dblclick", () => subtitulo.nextElementSibling.style.display = 'block');
+                    }
+                }
+            </script>
+            <img src="./images/foto.jpeg" alt="Foto"
+                 width="200" height="200">
+             <h1>João Vítor da Silva</h1>
+                        
+            <section>
+                <h2>Perfil</h2>
+                <div>
+                    <p>Olá sou o João, estudante da UFU de Sistemas de informação.</p>
+                    <p>blablalbablabla</p> 
+                </div> 
+                
+            </section>
+
+            <section>
+                <h2>Principais competências</h2>
+                <ul>
+                    <li>C++</li>
+                    <li>Programador Java</li>
+                    <li>Programador Prolog</li>
+                    <li>Faço café</li>
+                    <li>Limpo chão</li>
+                </ul>
+                
+            </section>
+
+            <section>
+                <h2>Formação Acadêmica</h2>
+                <p>Graduando em Sistemas de Informação pela 
+                    <a href="https://ufu.br/">Universidade Federal de Uberlândia</a>
+                    e mestrado pela 
+                    <a href="https://www5.usp.br/">Universidade de São Paulo</a>.
+                </p>
+                
+            </section>
+
+            <section>
+                <h2>Experiência Profissional</h2>
+                <ol>
+                    <li>Coca cola(2010-2015)
+                        <ul>
+                            <li>Gerente</li>
+                        </ul>
+                    </li>
+                    <li>Professor(2015-2020)
+                        <ul>
+                            <li>UFU</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p><a href="experiencia.html">Veja com mais detalhes</a></p>
+                
+            </section>
+
+            <section>
+                <h2>Contato</h2>
+                <div>
+                    <p><img src="./images/local.png" alt="Local"
+                        width="30" height="30">
+                        Uberlândia
+                    </p>
+
+                    <p><img src="./images/telefone.png" alt="Local"
+                        width="30" height="30">
+                        <a href="tel:(34)9999-9999">(34)9999-9999</a>
+                    </p>
+
+                    <p><img src="./images/email.png" alt="Local"
+                        width="30" height="30">
+                        <a href="mailto:tata@ufu.br">tata@ufu.br</a>
+                    </p>
+                </div>
+            </section>
+        
+        </main>
+    </body>
+</html>
