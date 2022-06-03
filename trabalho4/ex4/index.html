@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <title>interface dinamica</title>
+        <style>
+            main{
+                position: absolute;
+                border: 1px solid grey;
+                background-color: #d3d3d3;
+                border-radius: 10px;
+
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                padding: 30px;
+            }
+            li{
+               width: 230px;
+               padding: 5px 10px 5px 20px;
+               margin: 3px;
+               background-color: rgb(189, 217, 240);
+               border: 0.5px solid rgb(70, 67, 212);
+               border-radius: 3px;
+            }
+            li > button{
+               font-size: smaller;
+               float: right;
+               color: red;
+               border: none;
+               background-color: rgb(189, 217, 240);
+               cursor: pointer; 
+            }
+        </style>
+    </head>
+
+    <body>
+        <main>
+        <div>
+            <label for="interesse">Interesse:</label>
+            <input type="text" id="interesse" name="interesse">
+        </div>
+
+        <ol>
+        </ol>
+
+        </main>
+        <script>
+            window.onload = function(){
+                const campoInteresse = document.querySelector("#interesse");
+                campoInteresse.addEventListener("keyup", e=>{
+                    if(e.key === "Enter")
+                        adicionaInteresse();
+                });
+            }
+            function adicionaInteresse() {
+                const campoInteresse = document.querySelector("#interesse");
+                const listaInteresses = document.querySelector("ol");
+
+                const novoLi = document.createElement("li");
+                const novoSpan = document.createElement("span");
+                const novoBotao = document.createElement("button");
+
+                novoSpan.textContent = campoInteresse.value;
+                novoBotao.textContent = '✖';
+
+                novoLi.appendChild(novoSpan);
+                novoLi.appendChild(novoBotao);
+                listaInteresses.appendChild(novoLi);
+
+                novoBotao.onclick = function(){
+                    listaInteresses.removeChild(novoLi);
+                }
+                campoInteresse.value= '';
+            }
+        </script>
+    </body>
+    </html>
