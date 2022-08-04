@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Teste API</title>
+  <style>
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      line-height: 1.5rem;
+      background-color: #ddd;
+      color: #555;
+      margin: 0;
+    }
+
+    main {
+      width: 60%;
+      margin: 0;
+      padding: 2% 4%;
+      background-color: #eee;
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    h1 {
+      text-align: center;
+    }
+    img{
+        display: block;
+        margin: 0px auto;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main>
+    <h1 id="animaldados"></h1>
+    <h1 id="tamanho"></h1>
+    <img id="imagem" src="" width="500px" height="500px">
+  </main>
+
+
+  <script>
+
+    async function buscaClimaLocal() {
+
+      try {
+        const response2 = await fetch(`https://zoo-animal-api.herokuapp.com/animals/rand`);
+        if (! response2.ok) throw new Error(response2.statusText);
+        animal = await response2.json();
+
+        // apresenta as informações do clima
+        const str = 'Nome: ' + animal.name;
+        const strr = 'Altura máxima: ' + animal.length_max + 'm';
+        const imagem = animal.image_link;
+        document.getElementById("animaldados").innerText = str;
+        document.getElementById("tamanho").innerText = strr;
+        document.getElementById("imagem").src = imagem;
+      }
+      catch (error) {
+        console.log(error);
+        alert('Não foi possível obter a temperatura local');
+      }
+    }
+
+    window.onload = function () {
+      buscaClimaLocal();
+    }
+
+  </script>
+
+</body>
+
+</html>

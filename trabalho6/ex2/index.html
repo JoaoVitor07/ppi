@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <style>
+            body{
+                background-color: #dcdcdc;
+            }
+            main{
+                width: 100%;
+                background-color: white;
+                border: 0.8px solid #aaa;
+                max-width: 300px;
+                padding: 30px;
+                border-radius: 10px;
+                color: black;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                box-shadow: 0 0 10px gray;
+                box-sizing: border-box;
+            }
+            input{
+                display: block;
+                margin: 9px 0 15px;
+                padding: 8px;
+                width: 90%;
+                border: 0.5px solid #888;
+            }
+            input:focus{
+                border: 0.5px solid grey;
+                box-shadow: 0px 0px 5px #565656;
+                outline: none;
+            }
+            button{
+                width: 50%;
+                padding: 8px;
+                
+  
+            }
+            .button button{
+                margin: 0 -2px;
+                padding: 5px 10px;
+            }
+        </style>
+        <meta charset="UTF-8">
+        <title>Exercício 6</title>
+    </head>
+
+    <body>
+        <main>
+            <div class="loginBox">
+                <h3>Cadastro de Usuário</h3>
+            <form name="formCadastro" action="cadastra.php" method="post"> 
+                
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" autocomplete="off">
+                </div>
+
+                <div>
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" name="senha" required>
+                </div>
+
+                <button class="submit" >Cadastrar</button>
+            </form>
+            </div>
+        </main>
+    </body>
+</html>
